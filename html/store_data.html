@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
@@ -17,7 +18,7 @@
     <link href="/static/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="/static/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-	<!-- bootstrap-daterangepicker -->
+    <!-- bootstrap-daterangepicker -->
     <link href="/static/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- bootstrap-datetimepicker -->
     <link href="/static/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
@@ -26,274 +27,270 @@
     <script src="/static/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="/static/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-     <!-- validator -->
+    <!-- validator -->
     <script src="/static/vendors/validator/validator.js"></script>
-  </head>
+</head>
 
-  <body class="nav-md">
+<body class="nav-md">
     <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="#" class="site_title"><i class="fa fa-book"></i> <span>Mantener</span></a>
-            </div>
-			
-            <div class="clearfix"></div>
-			
-            <br />
-
-            <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
-                <h3>General</h3>
-                <ul class="nav side-menu">
-                  <li><a href="#"><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                  </li>  
-                  <li><a href="/"><i class="fa fa-file-text-o"></i> Add Log <span class="fa fa-chevron-down"></span></a>
-                  </li>				  
-                </ul>
-              </div>
-            </div>
-            <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="#">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->
-          </div>
-        </div>
-
-        <!-- top navigation -->
-		<div class="top_nav">
-            <div class="nav_menu">
-                <nav>
-                    <div class="nav toggle">
-                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="/home" class="site_title"><i class="fa fa-book"></i> <span>Mantener</span></a>
                     </div>
-		    <ul class="nav navbar-nav navbar-right">
-		        <li class="">
-                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="/static/images/img.jpg" alt="">Admin
-                                <span class=" fa fa-angle-down"></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="javascript:;"> Profile</a></li>
-                            <li>
-                                <a href="javascript:;">
-                                    <span class="badge bg-red pull-right">50%</span>
-                                    <span>Settings</span>
-                                </a>
-                            </li>
-                                <li><a href="javascript:;">Help</a></li>
-                                <li><a href="#"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                    </ul>
-                </li>
-	        </ul>
-	       </nav>
-		    </div>
-		</div>
-		
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>PagerDuty Work Log</h3>
-              </div>
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="clearfix"></div>
-
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title"> 
-                      <h2>Add New Log Here <small></small></h2>
-                      <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>					  
                     <div class="clearfix"></div>
-                  </div>
-                  <div class="col-lg-12 col-md-6">
-		      <div class="x_content">
-			<form class="form-horizontal form-label-left" role="form" novalidate>
-                            <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">User Id
-                                    <span class="required">*</span>
-                                </label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select id="user_id" class="select2_single form-control" tabindex="-1" name="shift" required="required">
-                                        <option>--select user--</option>
-                                    </select>
+                    <br />
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <ul class="nav side-menu">
+                                <li><a href="/home"><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                                </li>
+                                <li><a href="/update"><i class="fa fa-file-text-o"></i> Add Log <span class="fa fa-chevron-down"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="#">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="/static/images/img.jpg" alt="">Admin
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="javascript:;"> Profile</a></li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="badge bg-red pull-right">50%</span>
+                                            <span>Settings</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="javascript:;">Help</a></li>
+                                    <li><a href="#"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>PagerDuty Work Log</h3>
+                        </div>
+                        <div class="title_right">
+                            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Go!</button>
+                                    </span>
                                 </div>
                             </div>
-			    <div class="item form-group">
-				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required">*</span>
-				</label>
-			        <div class="col-md-6 col-sm-6 col-xs-12 has-feedback">
-			            <input id="name" class="form-control has-feedback-left" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="both name(s) e.g Jon Doe" required="required" type="text">
-				        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-				</div>
-			    </div>
-			    <div class="item form-group">
-				<label class="control-label col-md-3 col-sm-3 col-xs-12">Shift
-					<span class="required">*</span>
-				</label>
-				<div class="col-md-6 col-sm-6 col-xs-12">
-				    <select id="shift" class="select2_single form-control" tabindex="-1" name="shift" required="required">
-					<option>--select shift--</option>
-					<option value="S1">S1 [8:30 AM to 8:30 PM]</option>
-					<option value="S2">S2 [8:30 PM to 8:30 AM]</option>
-				    </select>
-				</div>
-			    </div>
-			    <div class="item form-group">
-				<label class="control-label col-md-3 col-sm-3 col-xs-12">Day
-				    <span class="required">*</span>
-			        </label>
-			        <div class="col-md-6 col-sm-6 col-xs-12">
-				    <select id="day" class="select2_single form-control" tabindex="-1" name="day" required="required">
-				        <option>--select day--</option>
-				        <option value="Weekday">Weekday</option>
-				        <option value="Weekend">Weekend</option>
-                                        <option value="National Holiday">National Holiday</option>
-			            </select>
-			        </div>
-			    </div>
-                            <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">RT Details</label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12 has-feedback">
-                                        <input id="rt" class="form-control has-feedback-left" data-validate-length-range="6" data-validate-words="2" name="rt" placeholder="Enter RT details here" type="text">
-                                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-                                   </div>
-                            </div>
-                            <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">TimeSpent
-                                    <span class="required">*</span>
-                                </label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select id="ts" class="select2_single form-control" tabindex="-1" name="day" required="required">
-                                        <option>--select 0 for none--</option>
-                                        <option value="Weekday">0 hour</option>
-                                        <option value="Weekend">1 hour</option>
-                                        <option value="Weekend">2 hours</option>
-                                        <option value="Weekend">3 hours</option>
-                                        <option value="Weekend">4 hours</option>
-                                        <option value="Weekend">5 hours</option>
-                                        <option value="Weekend">6 hours</option>
-                                        <option value="Weekend">7 hours</option>
-                                        <option value="Weekend">8 hours</option>
-                                        <option value="Weekend">9 hours</option>
-                                        <option value="Weekend">10 hours</option>
-                                        <option value="Weekend">11 hours</option>
-                                        <option value="Weekend">12 hours</option>
-                                    </select>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Add New Log Here <small></small></h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Settings 1</a>
+                                                </li>
+                                                <li><a href="#">Settings 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
                                 </div>
-                            </div>
-			    <div class="item form-group">
-			        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date
-				    <span class="required">*</span>
-				</label>
-			        <div class="col-md-3">
-				    <fieldset>
-                                        <div class="control-group">
-                                            <div class="controls">
-                                                <div class="col-md-11 xdisplay_inputx form-group has-feedback">
-                                                    <input type="text" class="form-control has-feedback-left" id="single_cal1" placeholder="First Name" aria-describedby="inputSuccess2Status">
-                                                        <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
-                                                        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+                                <div class="col-lg-12 col-md-6">
+                                    <div class="x_content">
+                                        <form class="form-horizontal form-label-left" role="form" novalidate>
+                                            <div class="item form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">User Id
+                                                    <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <select id="user_id" class="select2_single form-control" tabindex="-1" name="shift" required="required">
+                                                        <option>--select user--</option>
+                                                    </select>
                                                 </div>
                                             </div>
+                                            <div class="item form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12 has-feedback">
+                                                    <input id="name" class="form-control has-feedback-left" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="both name(s) e.g Jon Doe" required="required" type="text">
+                                                    <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Shift
+                                                    <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <select id="shift" class="select2_single form-control" tabindex="-1" name="shift" required="required">
+                                                        <option>--select shift--</option>
+                                                        <option value="S1">S1 [8:30 AM to 8:30 PM]</option>
+                                                        <option value="S2">S2 [8:30 PM to 8:30 AM]</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Day
+                                                    <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <select id="day" class="select2_single form-control" tabindex="-1" name="day" required="required">
+                                                        <option>--select day--</option>
+                                                        <option value="Weekday">Weekday</option>
+                                                        <option value="Weekend">Weekend</option>
+                                                        <option value="National Holiday">National Holiday</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">RT Details</label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12 has-feedback">
+                                                    <input id="rt" class="form-control has-feedback-left" data-validate-length-range="6" data-validate-words="2" name="rt" placeholder="Enter RT details here" type="text">
+                                                    <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">TimeSpent
+                                                    <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <select id="ts" class="select2_single form-control" tabindex="-1" name="day" required="required">
+                                                        <option>--select 0 for none--</option>
+                                                        <option value="Weekday">0 hour</option>
+                                                        <option value="Weekend">1 hour</option>
+                                                        <option value="Weekend">2 hours</option>
+                                                        <option value="Weekend">3 hours</option>
+                                                        <option value="Weekend">4 hours</option>
+                                                        <option value="Weekend">5 hours</option>
+                                                        <option value="Weekend">6 hours</option>
+                                                        <option value="Weekend">7 hours</option>
+                                                        <option value="Weekend">8 hours</option>
+                                                        <option value="Weekend">9 hours</option>
+                                                        <option value="Weekend">10 hours</option>
+                                                        <option value="Weekend">11 hours</option>
+                                                        <option value="Weekend">12 hours</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Date
+                                                    <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-3">
+                                                    <fieldset>
+                                                        <div class="control-group">
+                                                            <div class="controls">
+                                                                <div class="col-md-11 xdisplay_inputx form-group has-feedback">
+                                                                    <input type="text" class="form-control has-feedback-left" id="single_cal1" placeholder="First Name" aria-describedby="inputSuccess2Status">
+                                                                    <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                                                    <span id="inputSuccess2Status" class="sr-only">(success)</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <div class="ln_solid"></div>
+                                            <div class="form-group">
+                                                <div class="col-md-6 col-md-offset-3">
+                                                    <button type="reset" class="btn btn-primary">Cancel</button>
+                                                    <button id="send" type="submit" class="btn btn-success">Submit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="row">
+                                            <div class="success"></div>
                                         </div>
-                                    </fieldset>
-		                </div>
-		            </div>
-	                    <div class="ln_solid"></div>
-			        <div class="form-group">
-			            <div class="col-md-6 col-md-offset-3">
-				        <button type="reset" class="btn btn-primary">Cancel</button>
-				        <button id="send" type="submit" class="btn btn-success">Submit</button>
-			            </div>
-			        </div>
-		        </form>
-                        <div class="row">
-                            <div class="success"></div>
-                        </div> 
-		      </div>
-	         </div>
-              </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /page content -->
             </div>
-          </div>
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    Mantener - A PagerDuty Worklog Tool
+                    <a href="#"></a>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+
         </div>
-        <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Mantener - A PagerDuty Worklog Tool <a href="#"></a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
-      </div>
     </div>
-
     <!-- FastClick -->
     <script src="/static/vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="/static/vendors/nprogress/nprogress.js"></script>
     <!-- iCheck -->
     <script src="/static/vendors/iCheck/icheck.min.js"></script>
-	<!-- bootstrap-daterangepicker -->
+    <!-- bootstrap-daterangepicker -->
     <script src="/static/vendors/moment/min/moment.min.js"></script>
     <script src="/static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <!-- bootstrap-datetimepicker -->    
-    <script src="/static/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script> 
+    <!-- bootstrap-datetimepicker -->
+    <script src="/static/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
     <script src="/static/vendors/jszip/dist/jszip.min.js"></script>
     <script src="/static/vendors/pdfmake/build/pdfmake.min.js"></script>
-    <script src="/static/vendors/pdfmake/build/vfs_fonts.js"></script>	
+    <script src="/static/vendors/pdfmake/build/vfs_fonts.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="/static/build/js/custom.min.js"></script>
     <script>
-	
-	$(document).ready(function(){
+        $(document).ready(function() {
 
             //Populate User List Dropdown
-            $.get("/api/v1/getUsers", function(usersList, status){
+            $.get("/api/v1/getUsers", function(usersList, status) {
                 jsonPretty = JSON.parse(usersList)
                 for (var key in jsonPretty) {
                     var option = document.createElement("OPTION");
@@ -302,47 +299,46 @@
                     user_id.options.add(option);
                 }
             });
-		
+
             // click on button submit
             $('#send').click(function(event) {
-	      
-                    var formData = {
-                        'user_id'   :$('#user_id option:selected').val(),
-                        'name'      :$('#name').val(),
-                        'shift'     :$('#shift option:selected').val(),
-                        'day'       :$('#day option:selected').val(),
-                        'tickets'   :$('#rt').val(),
-                        'timespent' :$('#ts option:selected').val(),
-			'date'      :$('#single_cal1').val()
-                    };
-                    if (($('#user_id').val() === '') || ($('#name').val() === '') || ($('#shift option:selected').val() === '') || ($('#day option:selected').val() === '') || ($('#ts').val() === '') || ($('#single_cal1').val() === '')){
-                        alert("Please fill the inputs first");
-                        return false;
-                    }
+
+                var formData = {
+                    'user_id': $('#user_id option:selected').val(),
+                    'name': $('#name').val(),
+                    'shift': $('#shift option:selected').val(),
+                    'day': $('#day option:selected').val(),
+                    'tickets': $('#rt').val(),
+                    'timespent': $('#ts option:selected').val(),
+                    'date': $('#single_cal1').val()
+                };
+                if (($('#user_id').val() === '') || ($('#name').val() === '') || ($('#shift option:selected').val() === '') || ($('#day option:selected').val() === '') || ($('#ts').val() === '') || ($('#single_cal1').val() === '')) {
+                    alert("Please fill the inputs first");
+                    return false;
+                }
 
                 var sendData = JSON.stringify(formData);
 
                 $.ajax({
-                     url: '/api/v1/storeData',
-                     type : 'POST',
-                     contentType: "application/json",
-                     dataType : 'json',
-                     data : sendData,
-                     encode : true
+                    url: '/api/v1/storeData',
+                    type: 'POST',
+                    contentType: "application/json",
+                    dataType: 'json',
+                    data: sendData,
+                    encode: true
                 }).done(function(data) {
-		    console.log(data);
-		    event.preventDefault();
-                        if(data.status == 1) {
-		            $('.success').append('<div class="alert alert-success">' + 'Data Pushed Successfully' + '</div>').fadeOut(5000);
-		        }
-			else {
-			    $('.success').append('<div class="alert alert-error">' + 'Exception: Server Error' + '</div>').fadeOut(5000);
-                            return false;
-			}	 
-		});
-	    });
-       });
-	
-	</script>
-  </body>
+                    console.log(data);
+                    event.preventDefault();
+                    if (data.status == 1) {
+                        $('.success').append('<div class="alert alert-success">' + 'Data Pushed Successfully' + '</div>').fadeOut(5000);
+                    } else {
+                        $('.success').append('<div class="alert alert-error">' + 'Exception: Server Error' + '</div>').fadeOut(5000);
+                        return false;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
 </html>
