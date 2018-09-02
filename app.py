@@ -5,6 +5,7 @@
 ######################################
 
 import sqlite3
+from sqlite3 import Error
 import json
 from flask import Flask, abort,request
 from flask import render_template
@@ -46,6 +47,23 @@ def geData():
     print output
     return output
 
+@app.route("/api/v1/getUsers",methods = ['GET'])
+def getUsers():
+    if request.method == 'GET':
+        try:
+            print "Fetching users from db"
+            cursor = g.db.execute('select * from users')
+            users = cursor.fetchall()
+            convert_json = {x[0]:x[1] for x in users}
+            users_list = json.dumps(convert_json)
+            return users_list
+        except Error as e:
+            print "Failed to fetch user list from table"
+            print(e)
+        return None
+    else:
+        return False
+
 @app.route('/api/v1/storeData',methods = ['POST'])
 def storeData():
     if request.method == 'POST':
@@ -54,12 +72,16 @@ def storeData():
         incomingData = request.data
         print incomingData
         dataDict = json.loads(incomingData)
+        print dataDict
         try:
+            uid = dataDict['user_id']
             nm = dataDict['name']
             shift = dataDict['shift']
             date = dataDict['date']
             day = dataDict['day']
-            cursor = g.db.execute("insert into work_log (name,shift,date,day) values(?,?,?,?)",(nm,shift,date,day))
+            tickets = dataDict['tickets']
+            timespent = dataDict['timespent']
+            cursor = g.db.execute("insert into work_log (user_id,name,shift,date,day,tickets,timespent) values(?,?,?,?,?,?,?)",(uid,nm,shift,date,day,tickets,timespent))
             g.db.commit()
         except ValueError, e:
     	    print 'Failed Pushing Data to Database'
