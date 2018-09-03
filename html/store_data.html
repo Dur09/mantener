@@ -222,6 +222,18 @@
                                                 </div>
                                             </div>
                                             <div class="item form-group">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">TimeSpent
+                                                    <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <select id="level" class="select2_single form-control" tabindex="-1" name="level" required="required">
+                                                        <option>--select level--</option>
+                                                        <option value="Primary">Primary</option>
+                                                        <option value="Secondary">Secondary</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Date
                                                     <span class="required">*</span>
                                                 </label>
@@ -310,6 +322,7 @@
                     'day': $('#day option:selected').val(),
                     'tickets': $('#rt').val(),
                     'timespent': $('#ts option:selected').val(),
+                    'level'    : $('#level option:selected').val(),
                     'date': $('#single_cal1').val()
                 };
                 if (($('#user_id').val() === '') || ($('#name').val() === '') || ($('#shift option:selected').val() === '') || ($('#day option:selected').val() === '') || ($('#ts').val() === '') || ($('#single_cal1').val() === '')) {
@@ -318,18 +331,19 @@
                 }
 
                 var sendData = JSON.stringify(formData);
-
+                var shhow;
                 $.ajax({
                     url: '/api/v1/storeData',
                     type: 'POST',
                     contentType: "application/json",
                     dataType: 'json',
                     data: sendData,
-                    encode: true
-                }).done(function(data) {
-                    console.log(data);
+                    //encode: true
+                }).done(function(show) {
+                    console.log(show);
                     event.preventDefault();
-                    if (data.status == 1) {
+                    if (show.status == 1) {
+                        alert("Submitted successfully");
                         $('.success').append('<div class="alert alert-success">' + 'Data Pushed Successfully' + '</div>').fadeOut(5000);
                     } else {
                         $('.success').append('<div class="alert alert-error">' + 'Exception: Server Error' + '</div>').fadeOut(5000);

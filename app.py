@@ -89,13 +89,14 @@ def storeData():
             day = dataDict['day']
             tickets = dataDict['tickets']
             timespent = dataDict['timespent']
-            cursor = g.db.execute("insert into work_log (user_id,name,shift,date,day,tickets,timespent) values(?,?,?,?,?,?,?)",(uid,nm,shift,date,day,tickets,timespent))
+            level = dataDict['level']
+            cursor = g.db.execute("insert into work_log (user_id,name,shift,date,day,tickets,timespent,level) values(?,?,?,?,?,?,?,?)",(uid,nm,shift,date,day,tickets,timespent,level))
             g.db.commit()
         except ValueError, e:
     	    print 'Failed Pushing Data to Database'
             return False
 
-    return json.dumps("Data Pushed Successfully.")
+    return {'status':'1'}
 
 
 @app.route('/api/v1/onCall',methods = ['GET'])
