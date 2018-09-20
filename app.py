@@ -10,7 +10,10 @@ import json
 from flask import Flask, abort,request
 from flask import render_template
 from flask import g
+from flask import make_response
 import os.path
+import StringIO
+import csv
 
 DATABASE = '/site/mantener/db/mantener'
 
@@ -19,6 +22,23 @@ app = Flask(__name__,template_folder='/site/mantener/html/')
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(BASE_DIR, "/site/mantener/db/mantener")
 
+sampleCSV = [
+[1, "PIZA3LH", "Durvesh Bhole", "S2", "09/02/2018", "Weekend", "RT123454", "Weekend", "Primary"],
+[2, "PIZA3LK", "Prashant Keshvani", "S2", "09/04/2018", "Weekday", "RT12344,RT23232", "Weekend", "Primary"],
+[3, "PIZA3LK", "Durvesh Bhole", "S2", "09/06/2018", "Weekend", "RT123454", "Weekend", "Secondary"],
+[4, "PIZA3LJ", "Sushrut Pajai", "S1", "09/02/2018", "Weekday", "RT123454", "Weekend", "Primary"],
+[5, "PIZA3LK", "Prashant Keshvani", "S1", "09/04/2018", "Weekend", "RT12344,RT23232", "Weekend", "Primary"],
+[6, "PIZA3LJ", "Sushrut Pajai", "S1", "09/14/2018", "Weekday", "RT123454", "Weekday", "Secondary"],
+[7, "PIZA3LK", "Prashant Keshvani", "S1", "09/06/2018", "Weekend", "RT12344,RT23232", "Weekend", "Primary"],
+[8, "PIZA3LJ", "Sushrut Pajai", "S1", "09/03/2018", "Weekday", "RT123454", "Weekday", "Secondary"],
+[9, "PIZA3LH", "Durvesh Bhole", "S2", "09/03/2018", "Weekend", "RT123454", "Weekend", "Primary"],
+[10, "PIZA3LJ", "Sushrut Pajai", "S2", "09/03/2018", "Weekend", "RT12344,RT23232", "Weekend", "Primary"],
+[11, "PIZA3LH", "Durvesh Bhole", "S1", "09/04/2018", "Weekend", "RT123454", "Weekend", "Primary"],
+[12, "PIZA3LJ", "Sushrut Pajai", "S2", "09/05/2018", "Weekday", "RT12344,RT23232", "Weekend", "Primary"],
+[13, "PIZA3LJ", "Sushrut Pajai", "S1", "09/05/2018", "Weekday", "RT123454", "Weekend", "Primary"],
+[14, "PIZA3LK", "Prashant Keshvani", "S2", "09/05/2018", "Weekday", "RT12344,RT23232", "Weekend", "Secondary"],
+[15, "PIZA3LK", "Prashant Keshvani", "S1", "09/05/2018", "Weekend", "RT12344,RT23232", 10, "Primary"]
+]
 
 def is_json(request):
     if not request.json:
@@ -45,8 +65,8 @@ def teardown_request(exception):
 
 
 #Data handling API's
-@app.route("/getData")
-def geData():
+@app.route("/api/v1/getData")
+def getData():
     cursor = g.db.execute("SELECT * FROM work_log")
     empData = cursor.fetchall()
     output = json.dumps(empData)
@@ -104,7 +124,7 @@ def onCall():
     try:
         level = request.args.get('level')
     except Error as e:
-        print "No parameter supplies",e
+        print "No parameter supplied",e
 
     cursor = g.db.execute('select u.user_id, u.full_name, u.email, u.contact, o.level, o.team from users u join on_call_now o using(user_id) where level = ?',(level,))
     items = []
@@ -115,6 +135,28 @@ def onCall():
 
     return json.dumps(items)
 
+#file download
+@app.route('/download')
+def post():
+    try:
+        queryParameter = request.args.get('date')
+    except Error as e:
+        print "No Parameter supplied",e
+
+    daterange = queryParameter.split(' - ', 1)
+    print daterange
+    cursor = g.db.execute('SELECT * FROM work_log where date > ? and date < ?', (daterange[0],daterange[1],))
+    dbResult = cursor.fetchall()
+    print dbResult
+    csv_headers = ["Id", "uid","Name","Shift","Date","Day","RT","ts","level"]
+    dbResult.insert(0,csv_headers)
+    si = StringIO.StringIO()
+    cw = csv.writer(si)
+    cw.writerows(dbResult)
+    output = make_response(si.getvalue())
+    output.headers["Content-Disposition"] = "attachment; filename=export.csv"
+    output.headers["Content-type"] = "text/csv"
+    return output
 
 #Sample API
 @app.route('/foo', methods=['POST']) 
@@ -124,7 +166,7 @@ def foo():
     print request.json
     return json.dumps(request.json)
 
-#Routes
+#views routes
 @app.route('/update')
 def index():
     return render_template('store_data.html') 
@@ -132,6 +174,10 @@ def index():
 @app.route('/home')
 def view():
     return render_template('index.html')
+
+@app.route('/generate_reports')
+def generateReports():
+    return render_template('reports.html')
 
 if __name__ == '__main__':
    print "Opened database successfully";

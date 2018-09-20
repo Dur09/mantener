@@ -50,6 +50,8 @@
                                 </li>
                                 <li><a href="/update"><i class="fa fa-file-text-o"></i> Add Log <span class="fa fa-chevron-down"></span></a>
                                 </li>
+                                <li><a href="/generate_reports"><i class="fa fa-file-text-o"></i> Reports <span class="fa fa-chevron-down"></span></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -187,7 +189,7 @@
                                                         <option>--select day--</option>
                                                         <option value="Weekday">Weekday</option>
                                                         <option value="Weekend">Weekend</option>
-                                                        <option value="National Holiday">National Holiday</option>
+                                                        <option value="Holiday">Holiday</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -203,26 +205,26 @@
                                                     <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <select id="ts" class="select2_single form-control" tabindex="-1" name="day" required="required">
+                                                    <select id="ts" class="select2_single form-control" tabindex="-1" name="ts" required="required">
                                                         <option>--select 0 for none--</option>
-                                                        <option value="Weekday">0 hour</option>
-                                                        <option value="Weekend">1 hour</option>
-                                                        <option value="Weekend">2 hours</option>
-                                                        <option value="Weekend">3 hours</option>
-                                                        <option value="Weekend">4 hours</option>
-                                                        <option value="Weekend">5 hours</option>
-                                                        <option value="Weekend">6 hours</option>
-                                                        <option value="Weekend">7 hours</option>
-                                                        <option value="Weekend">8 hours</option>
-                                                        <option value="Weekend">9 hours</option>
-                                                        <option value="Weekend">10 hours</option>
-                                                        <option value="Weekend">11 hours</option>
-                                                        <option value="Weekend">12 hours</option>
+                                                        <option value="0">0 hour</option>
+                                                        <option value="1">1 hour</option>
+                                                        <option value="2">2 hours</option>
+                                                        <option value="3">3 hours</option>
+                                                        <option value="4">4 hours</option>
+                                                        <option value="5">5 hours</option>
+                                                        <option value="6">6 hours</option>
+                                                        <option value="7">7 hours</option>
+                                                        <option value="8">8 hours</option>
+                                                        <option value="9">9 hours</option>
+                                                        <option value="10">10 hours</option>
+                                                        <option value="11">11 hours</option>
+                                                        <option value="12">12 hours</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="item form-group">
-                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">TimeSpent
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Level
                                                     <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
